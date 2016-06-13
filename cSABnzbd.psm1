@@ -109,7 +109,7 @@ class cSABnzbdInstall
     
     [PSCustomObject] GetLatestVersion ()
     {
-        $ReleaseInfo = Invoke-RestMethod -Uri 'https://api.github.com/repos/sabnzbd/sabnzbd/releases/latest'
+        $ReleaseInfo = Invoke-RestMethod -Uri 'https://api.github.com/repos/sabnzbd/sabnzbd/releases/latest' -UseBasicParsing
         return $ReleaseInfo
     }
 }
