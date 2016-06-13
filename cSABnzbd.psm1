@@ -12,10 +12,7 @@ class cSABnzbdInstall
     
     [DscProperty()]
     [PSCredential]$ServiceCredential
-    
-    [DscProperty()]
-    [bool]$EnableWindowsFirewall
-        
+           
     # Gets the resource's current state.
     [cSABnzbdInstall] Get() 
     {
