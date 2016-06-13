@@ -5,7 +5,7 @@ enum Ensure
 }
 
 [DscResource()]
-class cSABnzbd 
+class cSABnzbdInstall 
 {
     [DscProperty(Key)]
     [string] $Ensure
@@ -17,7 +17,7 @@ class cSABnzbd
     [bool]$EnableWindowsFirewall
         
     # Gets the resource's current state.
-    [cSABnzbd] Get() 
+    [cSABnzbdInstall] Get() 
     {
         # If SABnzbd is installed, check we have the latest version installed
         $Package = Get-Package -Name 'Sabnzbd' -ErrorAction SilentlyContinue
