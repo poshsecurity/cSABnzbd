@@ -1,4 +1,4 @@
-#xSABnzbd
+#cSABnzbd
 
 A simple DSC module for maintaining a SABnzbd+ install
 
