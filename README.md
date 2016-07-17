@@ -40,7 +40,7 @@ Controls the installation (absent or present) of SABNzbd, also ensure that the s
 ## Examples
 ### Ensure SABnzbd Installed
 
-`
+```powershell
 configuration DownloadHostDSC
 {
     Import-DscResource -ModuleName 'cSABnzbd'
@@ -50,13 +50,13 @@ configuration DownloadHostDSC
         Ensure    = 'Present'
     }
 }
-
+```
 
 Ensures that SABnzbd is installed.
 
 ### Ensure SABnzbd not installed
 
-`
+```powershell
 configuration DownloadHostDSC
 {
     Import-DscResource -ModuleName 'cSABnzbd'
@@ -66,6 +66,6 @@ configuration DownloadHostDSC
         Ensure    = 'Absent'
     }
 }
-
+```
 
 Ensures that SABnzbd is not installed.
