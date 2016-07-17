@@ -40,7 +40,8 @@ Controls the installation (absent or present) of SABNzbd, also ensure that the s
 ## Examples
 ### Ensure SABnzbd Installed
 
-`configuration DownloadHostDSC
+`
+configuration DownloadHostDSC
 {
     Import-DscResource -ModuleName 'cSABnzbd'
 
@@ -55,7 +56,8 @@ Ensures that SABnzbd is installed.
 
 ### Ensure SABnzbd not installed
 
-`configuration DownloadHostDSC
+`
+configuration DownloadHostDSC
 {
     Import-DscResource -ModuleName 'cSABnzbd'
 
