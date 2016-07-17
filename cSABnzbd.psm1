@@ -19,8 +19,8 @@ class cSABnzbdInstall
         # If SABnzbd is installed, check we have the latest version installed
         $Package = Get-Package -Name 'Sabnzbd' -ErrorAction SilentlyContinue
         if ($null -ne $Package) 
-        { 
-            $this.Ensure = [Ensure]::Present 
+        {
+            $this.Ensure = [Ensure]::Present
         }
         else 
         {
@@ -36,7 +36,9 @@ class cSABnzbdInstall
         {
             # Get Sabnzbd info from github
             $ReleaseInfo = $this.GetLatestVersion()
-            $SetupAsset = $ReleaseInfo.assets | where {$_.name.contains('.exe')}
+            $SetupAsset = $ReleaseInfo.assets | Where-Object -FilterScript {
+                $_.name.contains('.exe')
+            }
             $DownloadURI = $SetupAsset.browser_download_url
             
             # Download from Github
@@ -71,7 +73,7 @@ class cSABnzbdInstall
             }
             
             # Start service
-            start-service sabnzbd
+            Start-Service sabnzbd
         }
         else
         {
@@ -102,8 +104,8 @@ class cSABnzbdInstall
         }
         else 
         {
-           # If it should be absent, check if null and return result
-           return ($null -eq $Package) 
+            # If it should be absent, check if null and return result
+            return ($null -eq $Package) 
         }
     }
     
