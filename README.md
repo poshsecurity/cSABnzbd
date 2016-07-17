@@ -1,42 +1,69 @@
-#{{xSABnzbd}}
+#xSABnzbd
 
-{{A simple DSC module for maintaining a SABnzbd+ install}}
-
-## Contributing
-Please check out common DSC Resources [contributing guidelines](https://github.com/PowerShell/DscResource.Kit/blob/master/CONTRIBUTING.md).
+A simple DSC module for maintaining a SABnzbd+ install
 
 ## Resources
 
-* {{**SABnzbdInstall** controls installation of SABnzbd}}
+* **SABnzbdInstall** controls installation of SABnzbd
 
-### {{Resource1}}
+### SABnzbdInstall
 
-{{Detailed description of resource 1}}
+Controls the installation (absent or present) of SABNzbd, also ensure that the software is automatically updated.
 
-* {{**Property1**: Description of property 1}}
-* {{**Property2**: Description of property 2}}
+* **Ensure**: Ensure either Absent or Present (Installed and Updated)
+* **ServiceCredential**: Credential of service to run as
 
 ## Versions
 
 ### Unreleased
 
-* {{Description of unreleased changes}}
+* 1.4 has not been released to PS Gallery
 
-### {{1.0.1.0}}
+### 1.4
 
-* {{Description of changes in the specific version}}
+* Work to ensure that the DSC module meets community guidelines and DSC guidelines
+* Developing test cases
 
-### {{1.0.0.0}}
+### 1.3
 
-* {{Initial release with the following resources:}}
-    * {{Resource1}}
-    * {{Resource2}}
+* Switched from standard web parsing to basic web parsing and not reliant on IE
+
+### 1.2
+
+* Cleaned up unrequired parameter
+
+### 1.1
+
+* Initial version
+
 
 ## Examples
-### {{Example1 title}}
+### Ensure SABnzbd Installed
 
-{{Description of example 1}}
+`configuration DownloadHostDSC
+{
+    Import-DscResource -ModuleName 'cSABnzbd'
 
-### {{Example2 title}}
+    cSABnzbdInstall SABnzbdInstaller
+    {
+        Ensure    = 'Present'
+    }
+}
 
-{{Description of example 2}}
+
+Ensures that SABnzbd is installed.
+
+### Ensure SABnzbd not installed
+
+`configuration DownloadHostDSC
+{
+    Import-DscResource -ModuleName 'cSABnzbd'
+
+    cSABnzbdInstall SABnzbdInstaller
+    {
+        Ensure    = 'Absent'
+    }
+}
+
+
+Ensures that SABnzbd is not installed.
