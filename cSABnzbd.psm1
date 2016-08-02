@@ -16,7 +16,7 @@ class cSABnzbdInstall
     # Gets the resource's current state.
     [cSABnzbdInstall] Get() 
     {
-        # If SABnzbd is installed, check we have the latest version installed
+        # If SABnzbd is installed
         $Package = Get-Package -Name 'Sabnzbd' -ErrorAction SilentlyContinue
         if ($null -ne $Package) 
         {
@@ -36,9 +36,7 @@ class cSABnzbdInstall
         {
             # Get Sabnzbd info from github
             $ReleaseInfo = $this.GetLatestVersion()
-            $SetupAsset = $ReleaseInfo.assets | Where-Object -FilterScript {
-                $_.name.contains('.exe')
-            }
+            $SetupAsset = $ReleaseInfo.assets.where{$_.name.contains('.exe')}
             $DownloadURI = $SetupAsset.browser_download_url
             
             # Download from Github
@@ -73,7 +71,7 @@ class cSABnzbdInstall
             }
             
             # Start service
-            Start-Service sabnzbd
+            Start-Service 'sabnzbd'
         }
         else
         {

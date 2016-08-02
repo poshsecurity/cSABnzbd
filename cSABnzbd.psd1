@@ -12,7 +12,7 @@
 RootModule = 'cSABnzbd.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.4'
+ModuleVersion = '1.5'
 
 # ID used to uniquely identify this module
 GUID = '6b9970f4-1f46-45ea-8a31-77f06cf6e779'
@@ -104,7 +104,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'First Version'
+        ReleaseNotes = 'Updated examples and documentation'
 
     } # End of PSData hashtable
 

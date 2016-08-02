@@ -15,26 +15,36 @@ Controls the installation (absent or present) of SABNzbd, also ensure that the s
 
 ## Versions
 
-### Unreleased
+### 1.5
 
-* 1.4 has not been released to PS Gallery
+* Code optimisation and clean-up
+* Updated examples and documentation
 
 ### 1.4
 
 * Work to ensure that the DSC module meets community guidelines and DSC guidelines
-* Developing test cases
+* Added PS5 requirements to PSD
+* Not released to PowerShell Gallery
 
 ### 1.3
 
 * Switched from standard web parsing to basic web parsing and not reliant on IE
+* Released to PowerShell Gallery
 
 ### 1.2
 
 * Cleaned up unrequired parameter
+* Released to PowerShell Gallery
 
 ### 1.1
 
+* Fixed incorrect resource name
+* Released to PowerShell Gallery
+
+### 1.0
+
 * Initial version
+* Released to PowerShell Gallery
 
 
 ## Examples
